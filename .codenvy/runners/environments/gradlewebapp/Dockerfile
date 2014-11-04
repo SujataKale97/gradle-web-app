@@ -12,7 +12,6 @@ RUN echo "export PATH=$PATH" >> /home/user/.bashrc
 
 RUN mkdir /home/user/app
 ADD $app$ /home/user/app/
-ENV CODENVY_APP_PORT_8080_HTTP 8080
-EXPOSE 8080
+
 RUN cd /home/user/app && gradle war && cp /home/user/app/build/libs/app.war /home/user/tomcat7/webapps/ROOT.war
-CMD /home/user/tomcat7/bin/catalina.sh run
+CMD while true; do true; done
