@@ -5,6 +5,8 @@ node("master"){
     
         
     bat 'gradle clean build'
+    
+    bat 'gradle war'
    
   }
   
