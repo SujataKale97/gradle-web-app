@@ -9,8 +9,5 @@ node("master"){
   }
   
   
-  stage ('deploy')
-  {
-    //bat '''copy C:\\Apps\\Jenkins\\jobs\\WebApp-Pipe\\workspace\\target\\*.war C:\\apache-tomcat-7.0.94\\webapps'''
-  }
+  
 }
