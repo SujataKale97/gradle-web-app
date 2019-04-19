@@ -21,7 +21,11 @@ node("master"){
     bat '''copy C:\\Apps\\Jenkins\\jobs\\gradle-pipeline\\workspace\\build\\libs\\*.war C:\\apache-tomcat-7.0.94\\webapps'''
   }
   
-  
+  stage('Push to Docker Registry'){
+    withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
+    }
+}
   
   
   
