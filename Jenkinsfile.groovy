@@ -1,7 +1,7 @@
 pipeline{
   
   agent{
-    dockerfile true
+    dockerfile.txt true
   }
   stages{
   stage ('Build') {
