@@ -2,20 +2,6 @@ apply plugin: 'java'
 apply plugin: 'war' 
 apply plugin: 'jetty' 
 apply plugin: 'eclipse-wtp'
-buildscript {
-  repositories {
-    maven {
-      url "https://plugins.gradle.org/m2/"
-    }
-  }
-  dependencies {
-    classpath "gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.22.0"
-  }
-}
-
-apply plugin: "com.palantir.docker"
-
-
 
 repositories {
   mavenCentral()
@@ -34,4 +20,16 @@ buildscript {
         classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1'
     }
 }
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.22.0"
+  }
+}
+apply plugin: "com.palantir.docker"
 
