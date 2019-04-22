@@ -8,7 +8,7 @@ node{
       
   }
   stage('Deploy'){
-    bat 'docker build -f Dockerfile.file .'
+    bat 'docker build -f Dockerfile .'
   }
  
 }
