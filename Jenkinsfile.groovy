@@ -6,7 +6,7 @@ node{
         
     bat 'gradle clean build'
     
-   bat '''copy C:\\Apps\\Jenkins\\jobs\\gradle-pipeline\\workspace\\target\\*.war C:\\Apps\\Jenkins\\jobs\\gradle-pipeline'''
+   bat '''copy C:\\Apps\\Jenkins\\jobs\\gradle-pipeline\\workspace\\build\\libs\\*.war C:\\Apps\\Jenkins\\jobs\\gradle-pipeline'''
       
   }
   stage('Deploy'){
