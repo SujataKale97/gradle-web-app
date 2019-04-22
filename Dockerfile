@@ -1,7 +1,5 @@
 # Pull base image
 From tomcat:7-jre8
 
-LABEL maintainer="kale.babanrao@happiestminds.com"
-
 # Copy to images tomcat path
- COPY  C:/Apps/Jenkins/jobs/gradle-pipeline/workspace/build/libs/workspace.war /usr/local/tomcat/webapps/workspace.war 
+ COPY  C:/Apps/Jenkins/jobs/gradle-pipeline/workspace/build/libs/ /usr/local/tomcat/webapps/ 
