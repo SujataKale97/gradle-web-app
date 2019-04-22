@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'war' 
 apply plugin: 'jetty' 
 apply plugin: 'eclipse-wtp'
-apply plugin: 'com.palantir.docker'
+
 
 
 
@@ -22,15 +22,4 @@ buildscript {
     dependencies {
         classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1'
     }
-}
-task unpack(type: Copy) {
-    dependsOn bootJar
-    from(zipTree(tasks.bootJar.outputs.files.singleFile))
-    into("build/dependency")
-}
-
-docker {
-    name "${project.group}/${bootJar.baseName}"
-    copySpec.from(tasks.unpack.outputs).into("dependency")
-    buildArgs(['DEPENDENCY': "dependency"])
 }
