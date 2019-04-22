@@ -10,7 +10,7 @@ node{
       
   }
   stage('Deploy'){
-    bat 'docker build -f Dockerfile .'
+    bat 'docker build -t mywebapp -f Dockerfile .'
   }
  
 }
