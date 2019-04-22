@@ -19,7 +19,7 @@ pipeline{
     steps{
     bat '''copy C:\\Apps\\Jenkins\\jobs\\gradle-pipeline\\workspace\\build\\libs\\*.war C:\\apache-tomcat-7.0.94\\webapps'''
     
-    bat 'echo myCustomEnvVar=$myCustomEnvVar'
+    
     }
   }
   
