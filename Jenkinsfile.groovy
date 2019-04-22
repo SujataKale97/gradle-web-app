@@ -7,5 +7,8 @@ node{
     bat 'gradle clean build'
       
   }
+  stage('Deploy'){
+    bat 'docker build -t Dockerfile.file .'
+  }
  
 }
