@@ -1,5 +1,5 @@
-FROM java:8
-VOLUME /tmp
-EXPOSE 8080
-ADD /build/libs/myjar.jar docker_jar.jar>
-#ENTRYPOINT ["java","-jar","spring-boot-docker-1.0.jar"]
+# Pull base image
+From tomcat:8-jre8
+
+# Copy to images tomcat path
+ADD C:\\Apps\\Jenkins\\jobs\\gradle-pipeline\\workspace\\build\\libs\\*.war C:\\apache-tomcat-7.0.94\\webapps
