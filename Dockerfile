@@ -1,11 +1,9 @@
 # Pull base image
 
-FROM tomcat:7-jre8
+FROM tomcat:8.0-alpine
 
 ADD  workspace.war /usr/local/tomcat/webapps/workspace.war 
 # Expose the default tomcat port
-EXPOSE 8088
+EXPOSE 8080
 
-# Start the tomcat (and leave it hanging)
-CMD service tomcat start && tail -f /var/lib/tomcat7/logs/catalina.out
-
+CMD ["catalina.sh", "run"]
