@@ -1,6 +1,17 @@
 apply plugin: 'java' 
 apply plugin: 'war' 
 apply plugin: 'jetty' 
+apply plugin: 'cloudbees'
+buildscript {
+    repositories {
+        mavenCentral()
+       
+    }
+    dependencies {
+        classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1'
+        c
+    }
+}
 plugins {
     id 'com.palantir.docker' version '0.22.0'
 }
@@ -16,15 +27,4 @@ dependencies {
   runtime 'javax.servlet:jstl:1.1.2'
 }
 
-apply plugin: 'cloudbees'
-buildscript {
-    repositories {
-        mavenCentral()
-       
-    }
-    dependencies {
-        classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1'
-        c
-    }
-}
 
