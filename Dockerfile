@@ -9,7 +9,7 @@ RUN cd /tmp && tar xvfz tomcat.tar.gz
 RUN cp -Rv /tmp/apache-tomcat-8.0.53/* /usr/local/tomcat/
 EXPOSE 8080
 ADD  workspace.war /usr/local/tomcat/webapps/workspace.war 
-CMD ['/usr/local/tomcat/bin/catalina.sh','run']
+CMD ['/usr/local/tomcat/bin/startup.sh','run']
 
 
 
