@@ -8,8 +8,8 @@ RUN wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.53/bin/apache-tomc
 RUN cd /usr/local/tomcat && tar xvfz tomcat.tar.gz
 #RUN cp -Rv /tmp/apache-tomcat-8.0.53/* /usr/local/tomcat/
 EXPOSE 8080
-ADD  workspace.war /usr/local/tomcat/webapps/workspace.war 
-CMD ['/usr/local/tomcat/bin/catalina.sh','run']
+ADD  workspace.war /usr/local/tomcat/apache-tomcat-8.0.53/webapps/workspace.war 
+CMD ['/usr/local/tomcat/apache-tomcat-8.0.53/bin/catalina.sh','run']
 
 
 
