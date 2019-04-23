@@ -1,7 +1,7 @@
 # Pull base image
 
 FROM java
-RUN apt-get wget -y upgrade
+RUN apt-get install wget -y 
 WORKDIR /opt/
 RUN wget 'http://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40-deployer.tar.gz'
 RUN tar -xvf
