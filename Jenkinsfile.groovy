@@ -14,8 +14,8 @@ node{
   }
   
   stage('Test'){
-    sh 'sudo chmod 755 gradlew'
-    sh 'sudo ./gradlew test -Ppay'
+    
+    bat ' ./gradlew test -Ppay'
   }
  
 }
