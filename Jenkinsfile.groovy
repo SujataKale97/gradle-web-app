@@ -12,5 +12,10 @@ node{
   stage('Deploy'){
     bat 'docker build -t mywebapp  .'
   }
+  
+  stage('Test'){
+    sh 'sudo chmod 755 gradlew'
+    sh 'sudo ./gradlew test -Ppay'
+  }
  
 }
