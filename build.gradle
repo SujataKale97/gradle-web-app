@@ -12,6 +12,16 @@ repositories {
 dependencies {
   providedCompile 'javax.servlet:servlet-api:2.5'
   runtime 'javax.servlet:jstl:1.1.2'
+  testImplementation 'junit:junit:4.12'
+    implementation 'org.testng:testng:6.11'
+    implementation 'org.json:json:20171018'
+    implementation 'com.github.cliftonlabs:json-simple:2.2.0'
+    implementation 'io.rest-assured:rest-assured:3.3.0'
+    implementation 'io.rest-assured:json-path:3.3.0'
+    implementation 'com.aventstack:extentreports:3.0.0'
+    implementation 'com.relevantcodes:extentreports:2.40.2'
+    implementation 'org.apache.poi:poi:3.9'
+    implementation 'org.apache.poi:poi-ooxml:3.9'
 }
 
 apply plugin: 'cloudbees'
