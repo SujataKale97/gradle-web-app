@@ -34,7 +34,7 @@ test {
      useDefaultListeners = true
      if(d)
      {
-        suites 'testxml/testng.xml'
+        suites "testxml/testng.xml"
      }
   }
 }
