@@ -16,7 +16,7 @@ node{
   stage('Test'){
     
     bat 'gradle test -Ppay'
-    publishHTML([reportDir: 'test-output', reportFiles: 'PaymentServiceReport.html', reportName: 'Payment Test-suite Report'])
+    
   }
  
 }
