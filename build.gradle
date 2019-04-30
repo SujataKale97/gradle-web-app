@@ -23,3 +23,13 @@ buildscript {
         classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1'
     }
 }
+
+test {
+
+  useTestNG()
+  {
+     dependsOn cleanTest()
+     useDefaultListeners = true
+     suites 'testxml/testng.xml'
+  }
+}
