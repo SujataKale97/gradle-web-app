@@ -24,12 +24,15 @@ buildscript {
     }
 }
 
+def d=project.hasProperty('pay');
 test {
-
   useTestNG()
   {
      dependsOn cleanTest()
      useDefaultListeners = true
-     suites 'testxml/testng.xml'
+     if(d)
+     {
+        suites 'testxml/testng.xml'
+     }
   }
 }
