@@ -15,7 +15,7 @@ node{
   
   stage('Test'){
     
-    bat ' gradlew test -Ppay'
+    bat 'gradle test -Ppay'
   }
  
 }
