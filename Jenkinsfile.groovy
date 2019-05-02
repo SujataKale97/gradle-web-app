@@ -15,6 +15,14 @@ node{
   
   stage('Test'){
     
+    checkout([$class: 'GitSCM',
+			  branches: [[name: '*/master']],
+			  userRemoteConfigs: [
+				[url: 'https://github.com/SujataKale97/webapp.git',
+				 credentialsId: 'ea4c3770-b2ed-4639-9ffc-cc3e586e454c' ]
+			  ]
+			])  
+    
     bat 'gradle test -Ppay'
   }
  
