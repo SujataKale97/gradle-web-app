@@ -6,18 +6,13 @@ node{
         
     bat 'gradle clean build'
     
-  //  bat '''copy C:\\Apps\\Jenkins\\jobs\\gradle-pipeline\\workspace\\build\\libs\\*.war C:\\Apps\\Jenkins\\jobs\\gradle-pipeline\\workspace'''
+ bat '''copy C:\\Apps\\Jenkins\\jobs\\gradle-pipeline\\workspace\\build\\libs\\*.war C:\\Apps\\Jenkins\\jobs\\gradle-pipeline\\workspace'''
       
   }
   stage('Deploy'){
- //   bat 'docker build -t mywebapp  .'
+  bat 'docker build -t mywebapp  .'
   }
   
-  stage('Test'){
-    
-    
-    
-    bat 'gradle test -Ppay'
-  }
+  
  
 }
