@@ -39,7 +39,7 @@ test {
 }*/
 sonarqube {
     properties {
-        property "sonar.host.url", "http://local:9000" //  url is your sonar server
+        property "sonar.host.url", "http://localhost:9000" //  url is your sonar server
         property "sonar.projectName", "gradle-webapp"   //  this name will appear in dashboard
         property "sonar.projectKey", "gradle-webapp" // It sould be a keybased on this report is created
 	
