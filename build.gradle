@@ -2,6 +2,7 @@ apply plugin: 'java'
 apply plugin: 'war' 
 apply plugin: 'jetty' 
 apply plugin: 'eclipse-wtp'
+apply plugin: "com.palantir.docker"
 apply plugin: 'org.sonarqube'
 
 repositories {
@@ -22,21 +23,20 @@ buildscript {
     dependencies {
         classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1'
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7'
+	classpath("gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.21.0")
     }
 }
-/*
-def d=project.hasProperty('pay');
-test {
-  useTestNG()
-  {
-     dependsOn cleanTest
-     useDefaultListeners = true
-     if(d)
-     {
-        suites "testxml/testng.xml"
-     }
-  }
-}*/
+task unpack(type: Copy) {
+    dependsOn bootJar
+    from(zipTree(tasks.bootJar.outputs.files.singleFile))
+    into("build/dependency")
+}
+docker {
+    name "${project.group}/${bootJar.baseName}"
+    copySpec.from(tasks.unpack.outputs).into("dependency")
+    buildArgs(['DEPENDENCY': "dependency"])
+}
+
 sonarqube {
     properties {
         property "sonar.host.url", "http://localhost:9000" //  url is your sonar server
