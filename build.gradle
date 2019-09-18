@@ -23,7 +23,7 @@ buildscript {
     dependencies {
         classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1'
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7'
-	classpath("gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.21.0")
+	classpath "gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.22.1"
     }
 }
 task unpack(type: Copy) {
